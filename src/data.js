@@ -10,4 +10,3 @@ function getStatus(status){
   const result = RICKANDMORTY.results.filter( person => person.status === status);
   return result;
 }
-
