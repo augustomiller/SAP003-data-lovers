@@ -1,61 +1,57 @@
-document.getElementById("btn-humans").addEventListener("click", clickHumans)
-document.getElementById("btn-aliens").addEventListener("click", clickAliens)
-document.getElementById("btn-alive").addEventListener("click", clickAlive)
-document.getElementById("btn-dead").addEventListener("click", clickDead)
-document.getElementById("btn-male").addEventListener("click", clickMale)
-document.getElementById("btn-female").addEventListener("click", clickFemale)
+document.getElementById("btn-humans").addEventListener("click", clickHumans);
+document.getElementById("btn-aliens").addEventListener("click", clickAliens);
+document.getElementById("btn-alive").addEventListener("click", clickAlive);
+document.getElementById("btn-dead").addEventListener("click", clickDead);
+document.getElementById("btn-male").addEventListener("click", clickMale);
+document.getElementById("btn-female").addEventListener("click", clickFemale);
 
-function clickHumans(){
+function buildCard(person) {
+  const card = `<div class="card">
+    <h3>${person.name}</h3>
+    <img src="${person.image}"/>
+    <p> Status: ${person.status} <br /> Gender: ${person.gender} <br /> Espécie: ${person.species} <br /> </p>
+  </div>`;
+  return card;
+}
+
+function clickHumans() {
   const species = getSpecies("Human");
   const cards = document.getElementById("cards");
   cards.innerHTML = "";
-  species.forEach(item => {
-    cards.innerHTML += item.name + "<br />"
-  });
+  species.forEach(item => cards.innerHTML += buildCard(item));
 }
 
-function clickAliens(){
+function clickAliens() {
   const species = getSpecies("Alien");
   const cards = document.getElementById("cards");
   cards.innerHTML = "";
-  species.forEach(item => {
-    cards.innerHTML += item.name + "<br />"
-  });
+  species.forEach(item => cards.innerHTML += buildCard(item));
 }
 
-function clickMale(){
-  const species = getGender("Male");
+function clickMale() {
+  const genders = getGender("Male");
   const cards = document.getElementById("cards");
   cards.innerHTML = "";
-  species.forEach(item => {
-    cards.innerHTML += item.name + "<br />"
-  });
+  genders.forEach(item => cards.innerHTML += buildCard(item));
 }
 
-function clickFemale(){
-  const species = getGender("Female");
+function clickFemale() {
+  const genders = getGender("Female");
   const cards = document.getElementById("cards");
   cards.innerHTML = "";
-  species.forEach(item => {
-    cards.innerHTML += item.name + "<br />"
-  });
+  genders.forEach(item => cards.innerHTML += buildCard(item));
 }
 
-function clickAlive(){
-  const alive = getStatus("Alive");
+function clickAlive() {
+  const status = getStatus("Alive");
   const cards = document.getElementById("cards");
   cards.innerHTML = "";
-  alive.forEach(item => {
-    cards.innerHTML += item.name + "<br/>"
-  });
+  status.forEach(item => cards.innerHTML += buildCard(item));
 }
 
-function clickDead(){
-  const dead = getStatus("Dead");
+function clickDead() {
+  const status = getStatus("Dead");
   const cards = document.getElementById("cards");
   cards.innerHTML = "";
-  dead.forEach(item => {
-    cards.innerHTML += item.name + "<br/>"
-  });
+  status.forEach(item => cards.innerHTML += buildCard(item));
 }
-
