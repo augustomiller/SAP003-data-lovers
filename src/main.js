@@ -56,4 +56,3 @@ function clickDead() {
   cards.innerHTML = "";
   status.forEach(item => cards.innerHTML += buildCard(item));
 }
-
