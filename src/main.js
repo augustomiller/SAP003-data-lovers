@@ -4,6 +4,9 @@ document.getElementById("btn-alive").addEventListener("click", clickAlive);
 document.getElementById("btn-dead").addEventListener("click", clickDead);
 document.getElementById("btn-male").addEventListener("click", clickMale);
 document.getElementById("btn-female").addEventListener("click", clickFemale);
+document.getElementById("btn-Ordem").addEventListener("click",clickOrdem);
+document.getElementById("btn-gene-desco").addEventListener("click",clickGeneDesc);
+document.getElementById("btn-status-desco").addEventListener("click",clickStatusDesc);
 // document.getElementById("btn-origin").addEventListener("click", clickOrigin);
 
 function buildCard(person) {
@@ -43,6 +46,13 @@ function clickFemale() {
   genders.forEach(item => cards.innerHTML += buildCard(item));
 }
 
+function clickGeneDesc(){
+  const genders = getGender("unknown");
+  const cards = document.getElementById("cards");
+  cards.innerHTML = "";
+  genders.forEach(item => cards.innerHTML += buildCard(item));
+}
+
 function clickAlive() {
   const status = getStatus("Alive");
   const cards = document.getElementById("cards");
@@ -57,3 +67,13 @@ function clickDead() {
   status.forEach(item => cards.innerHTML += buildCard(item));
 }
 
+function clickStatusDesc(){
+  const status = getStatus("unknown")
+  const cards = document.getElementById("cards");
+  cards.innerHTML = "";
+  status.forEach(item => cards.innerHTML += buildCard(item));
+}
+function clickOrdem(){
+  let ordem = RICKANDMORTY.results.sort((a,b)=>(a.name>b.name)? 1 :-1) //sort ordenou os valores dos tributos names do objeto results por ordem alfabetica (codigo asc)
+  ordem.forEach(item => cards.innerHTML += buildCard(item));
+}
