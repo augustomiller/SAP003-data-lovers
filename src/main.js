@@ -46,7 +46,7 @@ function clickFemale() {
   genders.forEach(item => cards.innerHTML += buildCard(item));
 }
 
-function clickGeneDesc(){
+function clickGeneDesc() {
   const genders = getGender("unknown");
   const cards = document.getElementById("cards");
   cards.innerHTML = "";
@@ -67,13 +67,13 @@ function clickDead() {
   status.forEach(item => cards.innerHTML += buildCard(item));
 }
 
-function clickStatusDesc(){
+function clickStatusDesc() {
   const status = getStatus("unknown")
   const cards = document.getElementById("cards");
   cards.innerHTML = "";
   status.forEach(item => cards.innerHTML += buildCard(item));
 }
-function clickOrdem(){
+function clickOrdem() {
   let ordem = RICKANDMORTY.results.sort((a,b)=>(a.name>b.name)? 1 :-1) //sort ordenou os valores dos tributos names do objeto results por ordem alfabetica (codigo asc)
   ordem.forEach(item => cards.innerHTML += buildCard(item));
 }
