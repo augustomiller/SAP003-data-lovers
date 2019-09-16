@@ -77,3 +77,4 @@ function clickOrdem() {
   let ordem = RICKANDMORTY.results.sort((a,b)=>(a.name>b.name)? 1 :-1) //sort ordenou os valores dos tributos names do objeto results por ordem alfabetica (codigo asc)
   ordem.forEach(item => cards.innerHTML += buildCard(item));
 }
+
