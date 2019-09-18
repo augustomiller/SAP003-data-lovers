@@ -4,31 +4,42 @@
   <meta charset="utf-8">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <div id="root"></div>
   <link href="https://fonts.googleapis.com/css?family=Schoolbell&display=swap" rel="stylesheet">
+  <h1>Rick & Morty</h1>
   <div class="content">
-    <aside>
-      <h3 class="menu">Menu</h3>
-      <ul>
-        <li><button id="btn-humans" class="btn">Humanos</button></li>
-        <li><button id="btn-aliens" class="btn">Aliens</button></li>
-        <li><button id="btn-alive" class="btn">Vivo</button></li>
-        <li><button id="btn-status-desco" class="btn">Status Desconhecido</button></li>
-        <li><button id="btn-dead" class="btn">Morto</button></li>
-        <li><button id="btn-male" class="btn">Homens</button></li>
-        <li><button id="btn-female" class="btn">Mulheres</button></li>
-        <li><button id="btn-gene-desco" class="btn">Gênero Desconhecido</button></li>
-        <li><button id="btn-Ordem" class="btn">A-Z</button></li>
-        <!-- <li><button id="btn-origin" class="btn">Origem</button></li> -->
-        <!-- <li><button id="btn-location" class="btn">Localização</button></li> -->
-      </ul>
-    </aside>
     <main>
-      <h1>Rick & Morty</h1>
+      <!-- <select name="Select" id="filterMenu" class="menuSelect">
+          <option value="Species">Species</option>
+          <option value="Status">Status</option>
+          <option value="Gender">Gender</option> -->
+      </select>
+      <select name="Specie" id="subMenuSpecie" class="subMenu">
+        <option value="nome" selected disabled>Select</option>
+        <option value="Human">Human</option>
+        <option value="Alien">Alien</option>
+      </select>
+      <select name="Status" id="subMenuStatus" class="subMenu">
+        <option value="nome" selected disabled>Select</option>
+        <option value="Alive">Alive</option>
+        <option value="Dead">Dead</option>
+        <option value="unknown">Unknwon</option>
+      </select>
+      <select name="Gender" id="subMenuGender" class="subMenu">
+        <option value="nome" selected disabled>Select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="unknown">Unknown</option>
+      </select>
+      <select name="A-Z" id="subMenuOrder" class="subMenu">
+        <option value="nome">Order</option>
+        <option value="A-Z">A-Z</option>
+        <option value="Z-A">Z-A</option>
+      </select>
       <div id="cards">
-
       </div>
     </main>
   </div>
@@ -39,4 +50,3 @@
 </body>
 
 </html>
-

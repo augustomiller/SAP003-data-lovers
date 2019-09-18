@@ -1,80 +1,70 @@
-document.getElementById("btn-humans").addEventListener("click", clickHumans);
-document.getElementById("btn-aliens").addEventListener("click", clickAliens);
-document.getElementById("btn-alive").addEventListener("click", clickAlive);
-document.getElementById("btn-dead").addEventListener("click", clickDead);
-document.getElementById("btn-male").addEventListener("click", clickMale);
-document.getElementById("btn-female").addEventListener("click", clickFemale);
-document.getElementById("btn-Ordem").addEventListener("click",clickOrdem);
-document.getElementById("btn-gene-desco").addEventListener("click",clickGeneDesc);
-document.getElementById("btn-status-desco").addEventListener("click",clickStatusDesc);
-// document.getElementById("btn-origin").addEventListener("click", clickOrigin);
+const data = RICKANDMORTY.results;
+// const menuSelect = document.getElementById("menuSelect");
+const subMenuSpecie = document.getElementById("subMenuSpecie");
+const subMenuStatus = document.getElementById("subMenuStatus");
+const subMenuGender = document.getElementById("subMenuGender");
+const card = document.getElementById("cards");
+const subMenuOrder = document.getElementById("subMenuOrder");
 
-function buildCard(person) {
-  const card = `<div class="card">
-    <h3>${person.name}</h3>
-    <img src="${person.image}"/>
-    <p> Status: ${person.status} <br /> Gender: ${person.gender} <br /> Espécie: ${person.species} <br/> Origin: ${person.origin.name} <br /> Location: ${person.location.name} </p>
-  </div>`;
-  return card;
+subMenuSpecie.addEventListener("change", () =>
+  buildCard(app.filterData(data, subMenuSpecie.value, "species"))
+);
+subMenuStatus.addEventListener("change", () =>
+  buildCard(app.filterData(data, subMenuStatus.value, "status"))
+);
+subMenuGender.addEventListener("change", () =>
+  buildCard(app.filterData(data, subMenuGender.value, "gender"))
+);
+subMenuOrder.addEventListener("change", selectOrderAlpha);
+
+window.onload = () => {
+  getAll(data);
+};
+function getAll(data) {
+  return buildCard(data);
 }
 
-function clickHumans() {
-  const species = getSpecies("Human");
-  const cards = document.getElementById("cards");
-  cards.innerHTML = "";
-  species.forEach(item => cards.innerHTML += buildCard(item));
+function buildCard(app) {
+  let layout = "";
+  app.forEach(person => {
+    layout += `<div class="card">
+        <img src="${person.image}"/>
+        <h3>${person.name}</h3>
+        <p>Status: ${person.status} <br />
+         Gender: ${person.gender} <br />
+         Espécie: ${person.species} <br/>
+         Origin: ${person.origin.name} <br />
+         Location: ${person.location.name} </p>
+        </div>`;
+  });
+  card.innerHTML = layout;
 }
 
-function clickAliens() {
-  const species = getSpecies("Alien");
-  const cards = document.getElementById("cards");
-  cards.innerHTML = "";
-  species.forEach(item => cards.innerHTML += buildCard(item));
+function selectOrderAlpha() {
+  if (subMenuOrder.value === "A-Z") {
+    data.sort((a, b) => (a.name > b.name ? 1 : -1));
+  } else if (subMenuOrder.value === "Z-A") {
+    data.sort((a, b) => (a.name > b.name ? -1 : 1));
+  } else {
+    data.sort((a, b) => (a.id > b.id ? 1 : -1));
+  }
+  buildCard(data);
 }
 
-function clickMale() {
-  const genders = getGender("Male");
-  const cards = document.getElementById("cards");
-  cards.innerHTML = "";
-  genders.forEach(item => cards.innerHTML += buildCard(item));
-}
+bn; // function getSubMenu(data) {
+//   const personType = [];
+//   data.map(person =>
+//     person.type.map(type => {
+//       if (!personType.includes(type)) {
+//         personType.push(type);
+//       } else {
+//         return false;
+//       }
+//     })
+//   );
 
-function clickFemale() {
-  const genders = getGender("Female");
-  const cards = document.getElementById("cards");
-  cards.innerHTML = "";
-  genders.forEach(item => cards.innerHTML += buildCard(item));
-}
-
-function clickGeneDesc() {
-  const genders = getGender("unknown");
-  const cards = document.getElementById("cards");
-  cards.innerHTML = "";
-  genders.forEach(item => cards.innerHTML += buildCard(item));
-}
-
-function clickAlive() {
-  const status = getStatus("Alive");
-  const cards = document.getElementById("cards");
-  cards.innerHTML = "";
-  status.forEach(item => cards.innerHTML += buildCard(item));
-}
-
-function clickDead() {
-  const status = getStatus("Dead");
-  const cards = document.getElementById("cards");
-  cards.innerHTML = "";
-  status.forEach(item => cards.innerHTML += buildCard(item));
-}
-
-function clickStatusDesc() {
-  const status = getStatus("unknown")
-  const cards = document.getElementById("cards");
-  cards.innerHTML = "";
-  status.forEach(item => cards.innerHTML += buildCard(item));
-}
-function clickOrdem() {
-  let ordem = RICKANDMORTY.results.sort((a,b)=>(a.name>b.name)? 1 :-1) //sort ordenou os valores dos tributos names do objeto results por ordem alfabetica (codigo asc)
-  ordem.forEach(item => cards.innerHTML += buildCard(item));
-}
-
+//   subMenu.innerHTML = "";
+//   subMenu.innerHTML = `<option valeu="none">Selecionar Filtro</option>`;
+//   subMenu.innerHTML += personType
+//     .map(type => `<option valeu="${type}">${type}</option>`);
+// }

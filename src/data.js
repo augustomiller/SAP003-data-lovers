@@ -1,16 +1,7 @@
-function getSpecies(specie) {
-  const result = RICKANDMORTY.results.filter( person => person.species === specie);
-  return result;
+function filterData (data, condition, key) {
+  return data.filter( item => item[key].includes(condition));
 }
-function getGender(gender) {
-  const result = RICKANDMORTY.results.filter( person => person.gender === gender);
-  return result;
-}
-function getStatus(status) {
-  const result = RICKANDMORTY.results.filter( person => person.status === status);
-  return result;
 
-function getName(name) {
-  const result = RICKANDMORTY.results.filter (person => person.name === name);
-  return result;
-}
+const app ={
+  filterData
+};
