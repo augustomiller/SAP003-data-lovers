@@ -51,7 +51,7 @@ function selectOrderAlpha() {
   buildCard(data);
 }
 
-bn; // function getSubMenu(data) {
+// function getSubMenu(data) {
 //   const personType = [];
 //   data.map(person =>
 //     person.type.map(type => {
