@@ -1,11 +1,11 @@
 require("../src/data.js");
 
-describe("example", () => {
+describe("function filter", () => {
   it("is a function", () => {
-    expect(typeof example).toBe("function");
+    expect(typeof app.filterData).toBe("function");
   });
 
-  it("returns `example`", () => {
-    expect(example()).toBe("example");
+  it("filter species", () => {
+    expect(app.filterData(,,)).toEqual([{}]);
   });
 });

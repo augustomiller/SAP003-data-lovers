@@ -20,6 +20,7 @@ subMenuOrder.addEventListener("change", selectOrderAlpha);
 window.onload = () => {
   getAll(data);
 };
+
 function getAll(data) {
   return buildCard(data);
 }
