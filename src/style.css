@@ -23,7 +23,8 @@ body{
 } */
 
 .subMenu{
-  background-color: #d95204;
+  background-color: #AFD5EC;
+  opacity: 0,3;
   border: none;
   height: 40px;
   cursor: pointer;
@@ -32,7 +33,7 @@ body{
 }
 
 .subMenu:hover{
-  background-color: gray;
+  background-color: #95D9DA ;
 }
 
 main{
@@ -41,7 +42,7 @@ main{
 
 h1{
   text-align: center;
-  color: #252759;
+  color: #FDFDFD;
 }
 
 #cards{
@@ -49,9 +50,8 @@ h1{
   flex-wrap: wrap;
 }
 .card{
-  border: 2px solid #abd904;
+  border: 2px solid #D9CCC5;
   border-radius: 10px;
-  background-color: #abd904;
   flex-basis: 200px;
   margin: 30px;
   text-align: center;
@@ -59,12 +59,11 @@ h1{
   flex-grow: 1;
   max-width: 250px;
   box-shadow: 0 0 10px #333;
+  background-color: rgba(253, 253, 253, 0.6)
 
- }
+}
 
 .card img{
   width: 100%;
 }
-
-
 
