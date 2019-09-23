@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
   <div id="root"></div>
   <link href="https://fonts.googleapis.com/css?family=Schoolbell&display=swap" rel="stylesheet">
-  <h1>Rick & Morty</h1>
-  <div class="content">
-    <main>
-      <!-- <select name="Select" id="filterMenu" class="menuSelect">
-          <option value="Species">Species</option>
-          <option value="Status">Status</option>
-          <option value="Gender">Gender</option> -->
-      </select>
-      <select name="Specie" id="subMenuSpecie" class="subMenu">
-        <option value="nome"  selected disabled>Select</option>
+  <main>
+    <div class="header">
+      <select name="Specie" id="menuSpecie" class="menu">
+        <option value="nome" selected disabled>Specie</option>
         <option value="Human">Human</option>
         <option value="Alien">Alien</option>
       </select>
-      <select name="Status" id="subMenuStatus" class="subMenu">
-        <option value="nome" selected disabled>Select</option>
+      <select name="Status" id="menuStatus" class="menu">
+        <option value="nome" selected disabled>Status</option>
         <option value="Alive">Alive</option>
         <option value="Dead">Dead</option>
         <option value="unknown">Unknwon</option>
       </select>
-      <select name="Gender" id="subMenuGender" class="subMenu">
-        <option value="nome" selected disabled>Select</option>
+      <select name="Gender" id="menuGender" class="menu">
+        <option value="nome" selected disabled>Gender</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
         <option value="unknown">Unknown</option>
       </select>
-      <select name="A-Z" id="subMenuOrder" class="subMenu">
+      <select name="A-Z" id="menuOrder" class="menu">
         <option value="nome">Order</option>
         <option value="A-Z">A-Z</option>
         <option value="Z-A">Z-A</option>
       </select>
-      <div id="cards">
-      </div>
-    </main>
-  </div>
+    </div>
+    <h1>Rick and Morty</h1>
+    <div id="cards">
+    </div>
+  </main>
   <script src="data/rickandmorty/rickandmorty_placeholder.js"></script>
   <!-- <script src="data/rickandmorty/rickandmorty.js"></script> -->
   <script src="data.js"></script>
