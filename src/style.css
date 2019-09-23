@@ -5,35 +5,27 @@ body{
   background-size: cover;
 }
 
-.content{
-  display: flex;
-  flex-basis: 120px;
-  padding: 15px;
-  text-align: center;
-
+.header{
+  background: #026aa7;
+  overflow: hidden;
+  padding: 4px;
+  z-index: 10;
+  text-align: left;
 }
 
-/* .menuSelect{
-  background-color: #d95204;
-  border: none;
-  height: 40px;
-  cursor: pointer;
-  border-radius: 10px;
-  margin: 5px;
-} */
-
-.subMenu{
-  background-color: #AFD5EC;
+.menu{
   opacity: 0,3;
   border: none;
   height: 40px;
   cursor: pointer;
   margin: 5px;
-  border-radius: 10px;
+  background-color: #026aa7;
+  color: #FDFDFD;
+
 }
 
-.subMenu:hover{
-  background-color: #95D9DA ;
+.menu:hover{
+  border: 2px solid #95D9DA ;
 }
 
 main{
