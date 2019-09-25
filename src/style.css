@@ -1,48 +1,55 @@
-body{
+body {
   margin: 0 auto;
-  font-family: 'Schoolbell', cursive;
-  background: url(https://images3.alphacoders.com/812/812062.png) no-repeat fixed;
+  font-family: "Schoolbell", cursive;
+  background: url(https://images3.alphacoders.com/812/812062.png) no-repeat
+    fixed;
   background-size: cover;
 }
 
-.header{
+.container {
   background: #026aa7;
   overflow: hidden;
-  padding: 4px;
+  padding: 0px;
   z-index: 10;
   text-align: left;
+  position: fixed;
+  width: 100%;
 }
 
-.menu{
-  opacity: 0,3;
+.menu {
+  opacity: 0, 3;
   border: none;
-  height: 40px;
+  height: 20px;
   cursor: pointer;
   margin: 5px;
   background-color: #026aa7;
-  color: #FDFDFD;
-
+  color: #fdfdfd;
+  display: inline-block;
 }
 
-.menu:hover{
-  border: 2px solid #95D9DA ;
+.menu:hover {
+  color: #95d9da;
 }
 
-main{
+main {
   flex-grow: 1;
 }
 
-h1{
-  text-align: center;
-  color: #FDFDFD;
+h1 {
+  color: #fdfdfd;
+  margin: 5px;
+  margin-left: 50px;
+  display: inline-block;
+
 }
 
-#cards{
+#cards {
   display: flex;
   flex-wrap: wrap;
+  padding-top: 65px;
 }
-.card{
-  border: 2px solid #D9CCC5;
+
+.card {
   border-radius: 10px;
   flex-basis: 200px;
   margin: 30px;
@@ -51,11 +58,9 @@ h1{
   flex-grow: 1;
   max-width: 250px;
   box-shadow: 0 0 10px #333;
-  background-color: rgba(253, 253, 253, 0.7)
-
+  background-color: rgba(253, 253, 253, 0.7);
 }
 
-.card img{
+.card img {
   width: 100%;
 }
-

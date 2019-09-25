@@ -37,7 +37,13 @@ e a interface construída a partir dele neste [link](https://app.talento.laborat
 
 ## 2. Resumo do projeto
 
-Neste projeto você **construirá uma _página web_ para visualizar um conjunto
+Neste projeto construimos uma aplicação onde apresentaremos o mundo de Rick e Morty, mostrando atráves de cards os personagem e sua informaçẽos principais, como nome; gênero; status de vida; espécie; origem;última localização.
+
+
+
+
+
+ Neste projeto você **construirá uma _página web_ para visualizar um conjunto
 (set) de dados_** que se adeque às necessidades de seu usuário.
 
 Como entregável final terá uma página web que permita **visualizar dados,
