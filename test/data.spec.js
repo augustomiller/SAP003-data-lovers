@@ -23,8 +23,10 @@ it("filter species", () => {
     { name: "Rick Sanchez", species: "Human" },
     { name: "Morty Smith", species: "Human" },
     { name: "Abradolf Lincler", species: "Human" }
-    
- it("filter gender", () => {
+  ]);
+});
+
+it("filter gender", () => {
   expect(
     app.filterData(
       [
@@ -65,48 +67,29 @@ it("filter status", () => {
 });
 
 it("ordenarNomes", () => {
-  expect(app.selectOrderAlpha("A-Z", [
-    {
-      name: "Rick Sanchez"
-    },
-    {
-      name: "Morty Smith"
-    },
-    {
-      name: "Abradolf Lincler"
-    }
-  ])).toEqual([
-    {
-      name: "Abradolf Lincler"
-    },
-    {
-      name: "Morty Smith"
-    },
-    {
-      name: "Rick Sanchez",
-    }
+  expect(
+    app.selectOrderAlpha("A-Z", [
+      { name: "Rick Sanchez" },
+      { name: "Morty Smith" },
+      { name: "Abradolf Lincler" }
+    ])
+  ).toEqual([
+    { name: "Abradolf Lincler" },
+    { name: "Morty Smith" },
+    { name: "Rick Sanchez" }
   ]);
 });
+
 it("desordenarNomes", () => {
-  expect(app.selectOrderAlpha("Z-A", [
-    {
-      name: "Abradolf Lincler"
-    },
-    {
-      name: "Morty Smith"
-    },
-    {
-      name: "Rick Sanchez"
-    }
-  ])).toEqual([
-    {
-      name: "Rick Sanchez"
-    },
-    {
-      name: "Morty Smith"
-    },
-    {
-      name: "Abradolf Lincler"
-    }
+  expect(
+    app.selectOrderAlpha("Z-A", [
+      { name: "Abradolf Lincler" },
+      { name: "Morty Smith" },
+      { name: "Rick Sanchez" }
+    ])
+  ).toEqual([
+    { name: "Rick Sanchez" },
+    { name: "Morty Smith" },
+    { name: "Abradolf Lincler" }
   ]);
 });
