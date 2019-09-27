@@ -7,27 +7,39 @@ const card = document.getElementById("cards");
 const menuOrder = document.getElementById("menuOrder");
 
 menuSpecie.addEventListener("change", () =>{
-  buildCard(app.filterData(data, menuSpecie.value, "species"))
-  porcentagemEspecie (menuSpecie.value)
+  buildCard(app.filterData(data, menuSpecie.value, "species"));
+  porcentagemEspecie (menuSpecie.value);
 }
-  );
+);
+
 menuStatus.addEventListener("change", () =>{
-  buildCard(app.filterData(data, menuStatus.value, "status"))
-  porcentagemStatus(menuStatus.value)
+  buildCard(app.filterData(data, menuStatus.value, "status"));
+  porcentagemStatus(menuStatus.value);
 }
 );
 menuGender.addEventListener("change", () =>{
-  buildCard(app.filterData(data, menuGender.value, "gender"))
-porcentagemGenero(menuGender.value)
+  buildCard(app.filterData(data, menuGender.value, "gender"));
+  porcentagemGenero(menuGender.value);
 });
-menuOrder.addEventListener("change", selectOrderAlpha);
+menuOrder.addEventListener("change", () => {
+  buildCard(app.selectOrderAlpha(menuOrder.value, data));});
 
 window.onload = () => {
   getAll(data);
 };
 
 function buildCard(app) {
-  let layout = "";
+  let layout = "";selectOrderAlpha("A-Z", [
+    {
+      name: "Rick Sanchez"
+    },
+    {
+      name: "Morty Smith"
+    },
+    {
+      name: "Abradolf Lincler"
+    }
+  ]);
   app.forEach(person => {
     layout += `<div class="card">
         <img src="${person.image}"/>
@@ -42,37 +54,25 @@ function buildCard(app) {
   card.innerHTML = layout;
 }
 
-function selectOrderAlpha() {
-  if (menuOrder.value === "A-Z") {
-    data.sort((a, b) => (a.name > b.name ? 1 : -1));
-  } else if (menuOrder.value === "Z-A") {
-    data.sort((a, b) => (a.name > b.name ? -1 : 1));
-  } else {
-    data.sort((a, b) => (a.id > b.id ? 1 : -1));
-  }
-  buildCard(data);
-  
+function porcentagemEspecie(specie) {
+  let totalSpecie = (data.length)-64;
+  let especie = app.filterData(data, specie, "species").length;
+  let calculo = ((especie/totalSpecie)*100).toFixed(2);
+  document.getElementById("cards").innerHTML+=`<p> Essa especie representa</p>${calculo}% dos personagens do desenho`;
 }
 
-function porcentagemEspecie(specie){
-let totalSpecie = (data.length)-64
-let especie = app.filterData(data, specie, "species").length
-let calculo = ((especie/totalSpecie)*100).toFixed(2);
-document.getElementById("cards").innerHTML+=`<p> Essa especie representa</p>${calculo}% dos personagens do desenho`
-}
-
-function porcentagemGenero(gender){
-  let totalGender = (data.length)-6
-  let genero = app.filterData(data, gender , "gender").length
+function porcentagemGenero(gender) {
+  let totalGender = (data.length)-6;
+  let genero = app.filterData(data, gender, "gender").length;
   let calculo = ((genero/totalGender)*100).toFixed(2);
-  document.getElementById("cards").innerHTML+=`<p> Esse gênero representa</p>${calculo}% dos personagens do desenho`
+  document.getElementById("cards").innerHTML+=`<p> Esse gênero representa</p>${calculo}% dos personagens do desenho`;
 }
 
-function porcentagemStatus(status){
-  let totalStatus = (data.length)
-  let valorStatus = app.filterData(data, status, "status").length
+function porcentagemStatus(status) {
+  let totalStatus = (data.length);
+  let valorStatus = app.filterData(data, status, "status").length;
   let calculo = ((valorStatus/totalStatus)*100).toFixed(2);
-  document.getElementById("cards").innerHTML+=`${calculo}% dos personagens estão nesse status`
+  document.getElementById("cards").innerHTML+=`${calculo}% dos personagens estão nesse status`;
   
 }
 
