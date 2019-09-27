@@ -59,3 +59,7 @@ h1{
   width: 100%;
 }
 
+#grafico{
+  background-color: aqua;
+  position: absolute;
+}
