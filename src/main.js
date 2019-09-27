@@ -49,25 +49,26 @@ function porcentagemEspecie(specie) {
   let totalSpecie = (data.length);
   let especie = app.filterData(data, specie, "species").length;
   let calculo = ((especie/totalSpecie)*100).toFixed(2);
-  statistic.innerHTML =`<p> Essa especie representa</p>${calculo}% dos personagens do desenho`;
+
+  statistic.innerHTML =`<p> This species represents ${calculo}% of the characters in the cartoon.</p>`;
+
 }
 
 function porcentagemGenero(gender) {
   let totalGender = (data.length);
   let genero = app.filterData(data, gender, "gender").length;
   let calculo = ((genero/totalGender)*100).toFixed(2);
-  statistic.innerHTML =`<p> Esse gênero representa</p>${calculo}% dos personagens do desenho`;
+
+  statistic.innerHTML =`<p> This gender represents ${calculo}% of the characters in the cartoon.</p>`;
+
 }
 
 function porcentagemStatus(status) {
   let totalStatus = (data.length);
   let valorStatus = app.filterData(data, status, "status").length;
   let calculo = ((valorStatus/totalStatus)*100).toFixed(2);
-  statistic.innerHTML =`${calculo}% dos personagens estão nesse status`;
+
+  statistic.innerHTML =`<p> This status represents ${calculo}% of the characters in the cartoon.</p>`;
+
 }
 
-// function porcentagem(dados, diferenca, palavra){
-//   let total = data.length - diferenca;
-//   let valorElemento = app.filterData(data,dados,palavra).length
-//   return ((valorElemento/total)*100).toFixed(2)
-//   }

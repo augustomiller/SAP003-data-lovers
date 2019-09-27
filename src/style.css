@@ -6,14 +6,24 @@ body {
   background-size: cover;
 }
 
-.container {
-  background: #026aa7;
+header {
+  background: #333;
   overflow: hidden;
   padding: 0px;
   z-index: 10;
-  text-align: left;
   position: fixed;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main {
+  padding-top: 65px;
+  flex-grow: 1;
+}
+
+.menuContainer{
+  flex-grow: 0;
 }
 
 .menu {
@@ -22,7 +32,7 @@ body {
   height: 20px;
   cursor: pointer;
   margin: 5px;
-  background-color: #026aa7;
+  background-color: #333;
   color: #fdfdfd;
   display: inline-block;
 }
@@ -31,22 +41,19 @@ body {
   color: #95d9da;
 }
 
-main {
-  flex-grow: 1;
-}
 
-h1 {
+.title {
   color: #fdfdfd;
   margin: 5px;
-  margin-left: 50px;
   display: inline-block;
-
+  flex-grow: 1;
+  text-align: center;
 }
 
 #cards {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  padding-top: 65px;
 }
 
 .card {
@@ -67,6 +74,6 @@ h1 {
 
 #percentage{
   text-align: center;
-  background-color: aqua;
-  padding: 30px 30px 30px 30px;
+  font-size: 30px;
+  background-color: rgba(253, 253, 253, 0.5);
 }
