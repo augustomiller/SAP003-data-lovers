@@ -10,6 +10,7 @@ menuSpecie.addEventListener("change", () =>{
   porcentagemEspecie (menuSpecie.value);
 }
 );
+
 menuStatus.addEventListener("change", () =>{
   buildCard(app.filterData(data, menuStatus.value, "status"));
   porcentagemStatus(menuStatus.value);
@@ -19,7 +20,8 @@ menuGender.addEventListener("change", () =>{
   buildCard(app.filterData(data, menuGender.value, "gender"));
   porcentagemGenero(menuGender.value);
 });
-menuOrder.addEventListener("change", selectOrderAlpha);
+menuOrder.addEventListener("change", () => {
+  buildCard(app.selectOrderAlpha(menuOrder.value, data));});
 
 window.onload = () => {
   getAll(data);
@@ -47,20 +49,25 @@ function porcentagemEspecie(specie) {
   let totalSpecie = (data.length);
   let especie = app.filterData(data, specie, "species").length;
   let calculo = ((especie/totalSpecie)*100).toFixed(2);
+
   statistic.innerHTML =`<p> This species represents ${calculo}% of the characters in the cartoon.</p>`;
+
 }
 
 function porcentagemGenero(gender) {
   let totalGender = (data.length);
   let genero = app.filterData(data, gender, "gender").length;
   let calculo = ((genero/totalGender)*100).toFixed(2);
+
   statistic.innerHTML =`<p> This gender represents ${calculo}% of the characters in the cartoon.</p>`;
+
 }
 
 function porcentagemStatus(status) {
   let totalStatus = (data.length);
   let valorStatus = app.filterData(data, status, "status").length;
   let calculo = ((valorStatus/totalStatus)*100).toFixed(2);
+
   statistic.innerHTML =`<p> This status represents ${calculo}% of the characters in the cartoon.</p>`;
 
 }
