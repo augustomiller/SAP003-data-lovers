@@ -73,3 +73,4 @@
   Há muitos personagens na série, mas quantos são humanos? Quantos são mulheres? Quantos estão vivos? Seria uma informação interessante para saber. Não tem como saber dessas informações só assistindo a série.
 
   Foram utilizados HTML 5, JavaScript e CSS 3. Onde as imagens foram apresentados em forma de card, com as informações associada a cada personagem.
+
