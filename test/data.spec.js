@@ -12,123 +12,19 @@ it("filter species", () => {
   expect(
     app.filterData(
       [
-        {
-          id: 1,
-          name: "Rick Sanchez",
-          status: "Alive",
-          species: "Human",
-          gender: "Male",
-          origin: {
-            name: "Earth (C-137)"
-          },
-          location: {
-            name: "Earth (Replacement Dimension)"
-          },
-          image: "https://placekitten.com/300/300"
-        },
-        {
-          id: 2,
-          name: "Morty Smith",
-          status: "Alive",
-          species: "Human",
-          gender: "Male",
-          origin: {
-            name: "Earth (C-137)"
-          },
-          location: {
-            name: "Earth (Replacement Dimension)"
-          },
-          image: "https://placekitten.com/300/300"
-        },
-        {
-          id: 6,
-          name: "Abadango Cluster Princess",
-          status: "Alive",
-          species: "Alien",
-          gender: "Female",
-          origin: {
-            name: "Abadango"
-          },
-          location: {
-            name: "Abadango"
-          },
-          image: "https://placekitten.com/300/300"
-        },
-        {
-          id: 7,
-          name: "Abradolf Lincler",
-          status: "unknown",
-          species: "Human",
-          gender: "Male",
-          origin: {
-            name: "Earth (Replacement Dimension)"
-          },
-          location: {
-            name: "Testicle Monster Dimension"
-          },
-          image: "https://placekitten.com/300/300"
-        },
-        {
-          id: 13,
-          name: "Alien Googah",
-          status: "unknown",
-          species: "Alien",
-          gender: "unknown",
-          origin: {
-            name: "unknown"
-          },
-          location: {
-            name: "Earth (Replacement Dimension)"
-          },
-          image: "https://placekitten.com/300/300"
-        }
+        { name: "Rick Sanchez", species: "Human" },
+        { name: "Morty Smith", species: "Human" },
+        { name: "Abadango Cluster Princess", species: "Alien" },
+        { name: "Abradolf Lincler", species: "Human" },
+        { name: "Alien Googah", species: "Alien" }
       ],
       "Human",
       "species"
     )
   ).toEqual([
-    {
-      id: 1,
-      name: "Rick Sanchez",
-      status: "Alive",
-      species: "Human",
-      gender: "Male",
-      origin: {
-        name: "Earth (C-137)"
-      },
-      location: {
-        name: "Earth (Replacement Dimension)"
-      },
-      image: "https://placekitten.com/300/300"
-    },
-    {
-      id: 2,
-      name: "Morty Smith",
-      status: "Alive",
-      species: "Human",
-      gender: "Male",
-      origin: {
-        name: "Earth (C-137)"
-      },
-      location: {
-        name: "Earth (Replacement Dimension)"
-      },
-      image: "https://placekitten.com/300/300"
-    },
-    {
-      id: 7,
-      name: "Abradolf Lincler",
-      status: "unknown",
-      species: "Human",
-      gender: "Male",
-      origin: {
-        name: "Earth (Replacement Dimension)"
-      },
-      location: {
-        name: "Testicle Monster Dimension"
-      },
-      image: "https://placekitten.com/300/300"
-    }
+    { name: "Rick Sanchez", species: "Human" },
+    { name: "Morty Smith", species: "Human" },
+    { name: "Abradolf Lincler", species: "Human" }
   ]);
 });
 
@@ -136,123 +32,19 @@ it("filter gender", () => {
   expect(
     app.filterData(
       [
-        {
-          id: 1,
-          name: "Rick Sanchez",
-          status: "Alive",
-          species: "Human",
-          gender: "Male",
-          origin: {
-            name: "Earth (C-137)"
-          },
-          location: {
-            name: "Earth (Replacement Dimension)"
-          },
-          image: "https://placekitten.com/300/300"
-        },
-        {
-          id: 2,
-          name: "Morty Smith",
-          status: "Alive",
-          species: "Human",
-          gender: "Male",
-          origin: {
-            name: "Earth (C-137)"
-          },
-          location: {
-            name: "Earth (Replacement Dimension)"
-          },
-          image: "https://placekitten.com/300/300"
-        },
-        {
-          id: 6,
-          name: "Abadango Cluster Princess",
-          status: "Alive",
-          species: "Alien",
-          gender: "Female",
-          origin: {
-            name: "Abadango"
-          },
-          location: {
-            name: "Abadango"
-          },
-          image: "https://placekitten.com/300/300"
-        },
-        {
-          id: 7,
-          name: "Abradolf Lincler",
-          status: "unknown",
-          species: "Human",
-          gender: "Male",
-          origin: {
-            name: "Earth (Replacement Dimension)"
-          },
-          location: {
-            name: "Testicle Monster Dimension"
-          },
-          image: "https://placekitten.com/300/300"
-        },
-        {
-          id: 13,
-          name: "Alien Googah",
-          status: "unknown",
-          species: "Alien",
-          gender: "unknown",
-          origin: {
-            name: "unknown"
-          },
-          location: {
-            name: "Earth (Replacement Dimension)"
-          },
-          image: "https://placekitten.com/300/300"
-        }
+        { name: "Rick Sanchez", gender: "Male" },
+        { name: "Morty Smith", gender: "Male" },
+        { name: "Abadango Cluster Princess", gender: "Female" },
+        { name: "Abradolf Lincler", gender: "Male" },
+        { name: "Alien Googah", gender: "unknown" }
       ],
       "Male",
       "gender"
     )
   ).toEqual([
-    {
-      id: 1,
-      name: "Rick Sanchez",
-      status: "Alive",
-      species: "Human",
-      gender: "Male",
-      origin: {
-        name: "Earth (C-137)"
-      },
-      location: {
-        name: "Earth (Replacement Dimension)"
-      },
-      image: "https://placekitten.com/300/300"
-    },
-    {
-      id: 2,
-      name: "Morty Smith",
-      status: "Alive",
-      species: "Human",
-      gender: "Male",
-      origin: {
-        name: "Earth (C-137)"
-      },
-      location: {
-        name: "Earth (Replacement Dimension)"
-      },
-      image: "https://placekitten.com/300/300"
-    },
-    {
-      id: 7,
-      name: "Abradolf Lincler",
-      status: "unknown",
-      species: "Human",
-      gender: "Male",
-      origin: {
-        name: "Earth (Replacement Dimension)"
-      },
-      location: {
-        name: "Testicle Monster Dimension"
-      },
-      image: "https://placekitten.com/300/300"
-    }
+    { name: "Rick Sanchez", gender: "Male" },
+    { name: "Morty Smith", gender: "Male" },
+    { name: "Abradolf Lincler", gender: "Male" }
   ]);
 });
 
@@ -260,122 +52,18 @@ it("filter status", () => {
   expect(
     app.filterData(
       [
-        {
-          id: 1,
-          name: "Rick Sanchez",
-          status: "Alive",
-          species: "Human",
-          gender: "Male",
-          origin: {
-            name: "Earth (C-137)"
-          },
-          location: {
-            name: "Earth (Replacement Dimension)"
-          },
-          image: "https://placekitten.com/300/300"
-        },
-        {
-          id: 2,
-          name: "Morty Smith",
-          status: "Alive",
-          species: "Human",
-          gender: "Male",
-          origin: {
-            name: "Earth (C-137)"
-          },
-          location: {
-            name: "Earth (Replacement Dimension)"
-          },
-          image: "https://placekitten.com/300/300"
-        },
-        {
-          id: 6,
-          name: "Abadango Cluster Princess",
-          status: "Alive",
-          species: "Alien",
-          gender: "Female",
-          origin: {
-            name: "Abadango"
-          },
-          location: {
-            name: "Abadango"
-          },
-          image: "https://placekitten.com/300/300"
-        },
-        {
-          id: 7,
-          name: "Abradolf Lincler",
-          status: "unknown",
-          species: "Human",
-          gender: "Male",
-          origin: {
-            name: "Earth (Replacement Dimension)"
-          },
-          location: {
-            name: "Testicle Monster Dimension"
-          },
-          image: "https://placekitten.com/300/300"
-        },
-        {
-          id: 13,
-          name: "Alien Googah",
-          status: "unknown",
-          species: "Alien",
-          gender: "unknown",
-          origin: {
-            name: "unknown"
-          },
-          location: {
-            name: "Earth (Replacement Dimension)"
-          },
-          image: "https://placekitten.com/300/300"
-        }
+        { name: "Rick Sanchez", status: "Alive" },
+        { name: "Morty Smith", status: "Alive" },
+        { name: "Abadango Cluster Princess", status: "Alive" },
+        { name: "Abradolf Lincler", status: "unknown" },
+        { name: "Alien Googah", status: "unknown" }
       ],
       "Alive",
       "status"
     )
   ).toEqual([
-    {
-      id: 1,
-      name: "Rick Sanchez",
-      status: "Alive",
-      species: "Human",
-      gender: "Male",
-      origin: {
-        name: "Earth (C-137)"
-      },
-      location: {
-        name: "Earth (Replacement Dimension)"
-      },
-      image: "https://placekitten.com/300/300"
-    },
-    {
-      id: 2,
-      name: "Morty Smith",
-      status: "Alive",
-      species: "Human",
-      gender: "Male",
-      origin: {
-        name: "Earth (C-137)"
-      },
-      location: {
-        name: "Earth (Replacement Dimension)"
-      },
-      image: "https://placekitten.com/300/300"
-    },
-    {
-      id: 6,
-      name: "Abadango Cluster Princess",
-      status: "Alive",
-      species: "Alien",
-      gender: "Female",
-      origin: {
-        name: "Abadango"
-      },
-      location: {
-        name: "Abadango"
-      },
-      image: "https://placekitten.com/300/300"
-    }
+    { name: "Rick Sanchez", status: "Alive" },
+    { name: "Morty Smith", status: "Alive" },
+    { name: "Abadango Cluster Princess", status: "Alive" }
   ]);
 });
