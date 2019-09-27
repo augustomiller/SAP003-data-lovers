@@ -13,31 +13,40 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Schoolbell&display=swap" rel="stylesheet">
   <main>
-    <div class="header">
-      <select name="Specie" id="menuSpecie" class="menu">
-        <option value="nome" selected disabled>Specie</option>
-        <option value="Human">Human</option>
-        <option value="Alien">Alien</option>
-      </select>
-      <select name="Status" id="menuStatus" class="menu">
-        <option value="nome" selected disabled>Status</option>
-        <option value="Alive">Alive</option>
-        <option value="Dead">Dead</option>
-        <option value="unknown">Unknwon</option>
-      </select>
-      <select name="Gender" id="menuGender" class="menu">
-        <option value="nome" selected disabled>Gender</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="unknown">Unknown</option>
-      </select>
-      <select name="A-Z" id="menuOrder" class="menu">
-        <option value="nome">Order</option>
-        <option value="A-Z">A-Z</option>
-        <option value="Z-A">Z-A</option>
-      </select>
+    <div class="container">
+      <header>
+        <select name="Specie" id="menuSpecie" class="menu">
+          <option value="nome" selected disabled>Specie</option>
+          <option value="Human">Human</option>
+          <option value="Alien">Alien</option>
+        </select>
+        <select name="Status" id="menuStatus" class="menu">
+          <option value="nome" selected disabled>Status</option>
+          <option value="Alive">Alive</option>
+          <option value="Dead">Dead</option>
+          <option value="unknown">Unknwon</option>
+        </select>
+        <select name="Gender" id="menuGender" class="menu">
+          <option value="nome" selected disabled>Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="unknown">Unknown</option>
+        </select>
+        <select name="A-Z" id="menuOrder" class="menu">
+          <option value="nome" selected disabled>Order</option>
+          <option value="nome">Id</option>
+          <option value="A-Z">A-Z</option>
+          <option value="Z-A">Z-A</option>
+        </select>
+        <select class="menu">
+          <option value="nome" selected disabled>Statistic</option>
+          <option value="human&Alien">Human e Aliens</option>
+          <option value="male&Female">Male e Female</option>
+          <option value="alive&Dead">Alive e Dead</option>
+        </select>
+        <h1>Rick and Morty's Wolrd</h1>
+      </header>
     </div>
-    <h1>Rick and Morty</h1>
     <div id="cards">
     </div>
   </main>

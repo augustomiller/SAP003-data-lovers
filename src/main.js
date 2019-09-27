@@ -1,5 +1,4 @@
 const data = RICKANDMORTY.results;
-// const menuSelect = document.getElementById("menuSelect");
 const menuSpecie = document.getElementById("menuSpecie");
 const menuStatus = document.getElementById("menuStatus");
 const menuGender = document.getElementById("menuGender");
@@ -81,4 +80,3 @@ function porcentagemStatus(status) {
 //   let valorElemento = app.filterData(data,dados,palavra).length
 //   return ((valorElemento/total)*100).toFixed(2)
 //   }
-  
