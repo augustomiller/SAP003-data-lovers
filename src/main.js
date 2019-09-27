@@ -10,6 +10,7 @@ menuSpecie.addEventListener("change", () =>{
   porcentagemEspecie (menuSpecie.value);
 }
 );
+
 menuStatus.addEventListener("change", () =>{
   buildCard(app.filterData(data, menuStatus.value, "status"));
   porcentagemStatus(menuStatus.value);
@@ -19,7 +20,8 @@ menuGender.addEventListener("change", () =>{
   buildCard(app.filterData(data, menuGender.value, "gender"));
   porcentagemGenero(menuGender.value);
 });
-menuOrder.addEventListener("change", selectOrderAlpha);
+menuOrder.addEventListener("change", () => {
+  buildCard(app.selectOrderAlpha(menuOrder.value, data));});
 
 window.onload = () => {
   getAll(data);
@@ -62,7 +64,6 @@ function porcentagemStatus(status) {
   let valorStatus = app.filterData(data, status, "status").length;
   let calculo = ((valorStatus/totalStatus)*100).toFixed(2);
   statistic.innerHTML+=`${calculo}% dos personagens estão nesse status`;
-
 }
 
 // function porcentagem(dados, diferenca, palavra){
