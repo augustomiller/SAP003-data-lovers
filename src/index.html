@@ -10,7 +10,7 @@
 
 <body>
   <div id="root"></div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Schoolbell&display=swap" rel="stylesheet">
   <header>
     <h1 class="title">Rick and Morty's Wolrd</h1>
@@ -38,7 +38,7 @@
         <option value="A-Z">A-Z</option>
         <option value="Z-A">Z-A</option>
       </select>
-      <select class="menu">
+      <select id="Statistics" class="menu">
         <option value="nome" selected disabled>Statistic</option>
         <option value="human&Alien">Human e Aliens</option>
         <option value="male&Female">Male e Female</option>
@@ -47,16 +47,15 @@
     </div>
   </header>
   <main>
-    <div id="percentage">
+    <div id="graphic">
     </div>
     <div id="cards">
     </div>
   </main>
   <script src="data/rickandmorty/rickandmorty_placeholder.js"></script>
-  <!-- <script src="data/rickandmorty/rickandmorty.js"></script> -->
+  <script src="data/rickandmorty/rickandmorty.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
-  <canvas id = "grafico"></canvas>
 </body>
 
 </html>
