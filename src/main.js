@@ -44,6 +44,7 @@ function buildCard(app) {
         </div>`;
   });
   card.innerHTML = layout;
+
 }
 
 const statistic = document.getElementById("percentage");
@@ -92,6 +93,7 @@ function grafico () {
     };
     const chart = new google.visualization.ColumnChart(document.getElementById("graphic"));
     chart.draw(dados, options);
+    card.innerHTML = ""
   }
   else if (valorStatistic.value === "human&Alien") {
     let dados = new google.visualization.DataTable();
@@ -107,8 +109,9 @@ function grafico () {
     };
     const chart = new google.visualization.ColumnChart(document.getElementById("graphic"));
     chart.draw(dados, options);
+    card.innerHTML = ""
   }
-  else {
+  if(valorStatistic.value === "alive&Dead") {
     let dados = new google.visualization.DataTable();
     dados.addColumn("string", "Topping");
     dados.addColumn("number", "Quantidade");
@@ -122,5 +125,6 @@ function grafico () {
     };
     const chart = new google.visualization.ColumnChart(document.getElementById("graphic")); 
     chart.draw(dados, options);
+    card.innerHTML = ""
   }
 }
