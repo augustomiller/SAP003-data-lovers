@@ -22,7 +22,7 @@ main {
   flex-grow: 1;
 }
 
-.menuContainer{
+.menuContainer {
   flex-grow: 0;
 }
 
@@ -40,7 +40,6 @@ main {
 .menu:hover {
   color: #95d9da;
 }
-
 
 .title {
   color: #fdfdfd;
@@ -72,12 +71,13 @@ main {
   width: 100%;
 }
 
-#percentage{
+#graphic {
+  margin: 0 auto;
+  overflow: hidden;
   text-align: center;
-  font-size: 30px;
-  background-color: rgba(253, 253, 253, 0.5);
+  padding: 15px;
+  width: 100%;
+  max-width: 600px;
+
 }
-#graphic{
-  margin: 15px;
- overflow: hidden;
-}
+
