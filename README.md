@@ -44,6 +44,8 @@
   - Segunda persona:
     <img src="./imagens/persona2.png" alt="Persona 2" title="Persona 2">
 
+  Com o protótipo feito no [Marvel](https://marvelapp.com/1ibhhfe6/screen/61885663)
+
 ## 3. História de Usuário
 
   Os usuários são espectadores de Rick and Morty, fãs, que assistem e reassistem os epsódios.
