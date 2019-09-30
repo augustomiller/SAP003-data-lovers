@@ -6,6 +6,7 @@ const card = document.getElementById("cards");
 const menuOrder = document.getElementById("menuOrder");
 const valorStatistic = document.getElementById("Statistics"); //grafico
 const graphic = document.getElementById("graphic");
+const statistic = document.getElementById("percentage");
 
 menuSpecie.addEventListener("change", () => {
   buildCard(app.filterData(data, menuSpecie.value, "species"));
@@ -18,6 +19,7 @@ menuStatus.addEventListener("change", () => {
 });
 menuGender.addEventListener("change", () => {
   buildCard(app.filterData(data, menuGender.value, "gender"));
+  console.log(menuGender.value)
   porcentagemGenero(menuGender.value);
 });
 menuOrder.addEventListener("change", () => {
@@ -47,8 +49,6 @@ function buildCard(app) {
   card.innerHTML = layout;
 }
 
-const statistic = document.getElementById("percentage");
-
 function porcentagemEspecie(specie) {
   let totalSpecie = data.length;
   let especie = app.filterData(data, specie, "species").length;
@@ -72,6 +72,7 @@ function porcentagemStatus(status) {
 
   statistic.innerHTML = `<p> This status represents ${calculo}% of the characters in the cartoon.</p>`;
 }
+
 google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(grafico);
 
