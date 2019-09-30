@@ -4,6 +4,7 @@ const menuStatus = document.getElementById("menuStatus");
 const menuGender = document.getElementById("menuGender");
 const card = document.getElementById("cards");
 const menuOrder = document.getElementById("menuOrder");
+const valorStatistic = document.getElementById("Statistics");//grafico
 
 menuSpecie.addEventListener("change", () =>{
   buildCard(app.filterData(data, menuSpecie.value, "species"));
@@ -23,6 +24,8 @@ menuGender.addEventListener("change", () =>{
 menuOrder.addEventListener("change", () => {
   buildCard(app.selectOrderAlpha(menuOrder.value, data));});
 
+valorStatistic.addEventListener("change", grafico); //grafico
+
 window.onload = () => {
   getAll(data);
 };
@@ -41,6 +44,7 @@ function buildCard(app) {
         </div>`;
   });
   card.innerHTML = layout;
+
 }
 
 const statistic = document.getElementById("percentage");
@@ -71,4 +75,56 @@ function porcentagemStatus(status) {
   statistic.innerHTML =`<p> This status represents ${calculo}% of the characters in the cartoon.</p>`;
 
 }
+google.charts.load("current", {"packages": ["corechart"]});
+google.charts.setOnLoadCallback(grafico);
 
+function grafico () {
+  if (valorStatistic.value === "male&Female") {
+    let dados = new google.visualization.DataTable();
+    dados.addColumn("string", "Topping");
+    dados.addColumn("number", "Quantidade");
+    dados.addRows([
+      ["Female", (app.filterData(data,"Female","gender")).length],
+      ["Male", (app.filterData(data,"Male","gender")).length]
+    ]);
+    let options = {"title": "Grafico de Gênero dos personagens de Rick and Morty",
+    "width": 400,
+    "height": 400
+    };
+    const chart = new google.visualization.ColumnChart(document.getElementById("graphic"));
+    chart.draw(dados, options);
+    card.innerHTML = ""
+  }
+  else if (valorStatistic.value === "human&Alien") {
+    let dados = new google.visualization.DataTable();
+    dados.addColumn("string", "Topping");
+    dados.addColumn("number", "Quantidade");
+    dados.addRows([
+      ["Humano", (app.filterData(data,"Human","species")).length],
+      ["Alien", (app.filterData(data,"Alien","species")).length]
+    ]);
+    let options = {"title": "Grafico de Species dos personagens de Rick and Morty",
+    "width": 400,
+    "height": 400
+    };
+    const chart = new google.visualization.ColumnChart(document.getElementById("graphic"));
+    chart.draw(dados, options);
+    card.innerHTML = ""
+  }
+  if(valorStatistic.value === "alive&Dead") {
+    let dados = new google.visualization.DataTable();
+    dados.addColumn("string", "Topping");
+    dados.addColumn("number", "Quantidade");
+    dados.addRows([
+      ["Vivo", (app.filterData(data,"Alive","status")).length],
+      ["Morto", (app.filterData(data,"Dead","status")).length]
+    ]);
+    let options = {"title": "Grafico de Status de vida dos personagens de Rick and Morty",
+      "width": 400,
+      "height": 400
+    };
+    const chart = new google.visualization.ColumnChart(document.getElementById("graphic")); 
+    chart.draw(dados, options);
+    card.innerHTML = ""
+  }
+}
