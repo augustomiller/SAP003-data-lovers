@@ -4,6 +4,7 @@ body {
   background: url(https://images3.alphacoders.com/812/812062.png) no-repeat
     fixed;
   background-size: cover;
+  display: flex;
 }
 
 header {
@@ -80,7 +81,7 @@ main {
   max-width: 600px;
 }
 
-#percentage{
+#percentage {
   text-align: center;
   font-size: 30px;
   background-color: rgba(253, 253, 253, 0.5);

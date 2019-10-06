@@ -19,7 +19,6 @@ menuStatus.addEventListener("change", () => {
 });
 menuGender.addEventListener("change", () => {
   buildCard(app.filterData(data, menuGender.value, "gender"));
-  console.log(menuGender.value);
   porcentagemGenero(menuGender.value);
 });
 menuOrder.addEventListener("change", () => {
@@ -31,6 +30,10 @@ valorStatistic.addEventListener("change", grafico); //grafico
 window.onload = () => {
   getAll(data);
 };
+
+function getAll(data) {
+  return buildCard(data);
+}
 
 function buildCard(app) {
   let layout = "";
