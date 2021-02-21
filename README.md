@@ -19,7 +19,7 @@
   usuários, precisamos entender e processar estes dados. Uma forma simples de
   fazer isso é criando _interfaces_ e _visualizações_.
 
-  Na imagem seguinte, você pode ser como os dados que estão na parte esquerda
+  Na imagem seguinte, você pode ver como os dados que estão na parte esquerda
   podem ser usados para construir a interface amigável e compreensível que está
   na parte direita.
 
